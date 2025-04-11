@@ -33087,8 +33087,12 @@ const DEFAULT_CONTAINERS = {
             '2_31': 'ghcr.io/rust-cross/manylinux_2_31-cross:riscv64'
         },
         'loongarch64-unknown-linux-gnu': {
-            auto: 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64',
-            '2_36': 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64'
+            auto: 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64',
+            '2_36': 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64'
+        },
+        'loongarch64-unknown-linux-musl': {
+            auto: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
+            musllinux_1_2: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
         }
     },
     arm64: {
@@ -33170,6 +33174,10 @@ const DEFAULT_CONTAINERS = {
         'loongarch64-unknown-linux-gnu': {
             auto: 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64',
             '2_36': 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64'
+        },
+        'loongarch64-unknown-linux-musl': {
+            auto: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
+            musllinux_1_2: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
         }
     }
 };
