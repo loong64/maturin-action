@@ -262,7 +262,12 @@ jobs:
               manylinux: 'musllinux_1_2',
               target: 'x86_64-unknown-linux-musl', # MUSL
               test-crate: 'maturin/test-crates/hello-world' # binary
-            }
+            },
+            {
+              manylinux: 'musllinux_1_2',
+              target: 'loongarch64-unknown-linux-musl', # MUSL
+              test-crate: 'maturin/test-crates/hello-world' # binary
+            },
           ]
         toolchain: [stable, nightly]
     steps:
@@ -277,6 +282,7 @@ jobs:
         uses: ./
         env:
           RUST_BACKTRACE: '1'
+          CARGO_TARGET_LOONGARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS: '-C target-feature=+crt-static'
         with:
           container: ${{ matrix.platform.container }}
           # Test docker-options
@@ -294,6 +300,7 @@ jobs:
         uses: ./
         env:
           RUST_BACKTRACE: '1'
+          CARGO_TARGET_LOONGARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS: '-C target-feature=+crt-static'
         with:
           container: ${{ matrix.platform.container }}
           args: -m ${{ matrix.platform.test-crate }}/Cargo.toml -i python3.8
@@ -308,6 +315,7 @@ jobs:
         uses: ./
         env:
           RUST_BACKTRACE: '1'
+          CARGO_TARGET_LOONGARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS: '-C target-feature=+crt-static'
         with:
           container: ${{ matrix.platform.container }}
           args: -m ${{ matrix.platform.test-crate }}/Cargo.toml -i python3.8
@@ -325,6 +333,7 @@ jobs:
         uses: ./
         env:
           RUST_BACKTRACE: '1'
+          CARGO_TARGET_LOONGARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS: '-C target-feature=+crt-static'
         with:
           container: ${{ matrix.platform.container }}
           args: -m ${{ matrix.platform.test-crate }}/Cargo.toml -i python3.8
