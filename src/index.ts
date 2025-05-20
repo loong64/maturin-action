@@ -114,8 +114,12 @@ const DEFAULT_CONTAINERS: Record<
       '2_31': 'ghcr.io/rust-cross/manylinux_2_31-cross:riscv64'
     },
     'loongarch64-unknown-linux-gnu': {
-      auto: 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64',
-      '2_36': 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64'
+      auto: 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64',
+      '2_36': 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64'
+    },
+    'loongarch64-unknown-linux-musl': {
+        auto: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
+        musllinux_1_2: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
     }
   },
   arm64: {
@@ -195,8 +199,12 @@ const DEFAULT_CONTAINERS: Record<
       '2_31': 'ghcr.io/rust-cross/manylinux_2_31-cross:riscv64'
     },
     'loongarch64-unknown-linux-gnu': {
-      auto: 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64',
-      '2_36': 'ghcr.io/rust-cross/manylinux_2_36-cross:loongarch64'
+      auto: 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64',
+      '2_36': 'ghcr.io/loong64/manylinux_2_36-cross:loongarch64'
+    },
+    'loongarch64-unknown-linux-musl': {
+        auto: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
+        musllinux_1_2: 'ghcr.io/loong64/musllinux_1_2-cross:loongarch64',
     }
   }
 }
@@ -224,7 +232,8 @@ const TARGET_ALIASES: Record<string, Record<string, string>> = {
     armv7l: 'armv7-unknown-linux-gnueabihf',
     ppc64le: 'powerpc64le-unknown-linux-gnu',
     ppc64: 'powerpc64-unknown-linux-gnu',
-    s390x: 's390x-unknown-linux-gnu'
+    s390x: 's390x-unknown-linux-gnu',
+    loongarch64: 'loongarch64-unknown-linux-gnu'
   },
   musllinux: {
     x64: 'x86_64-unknown-linux-musl',
@@ -235,7 +244,8 @@ const TARGET_ALIASES: Record<string, Record<string, string>> = {
     arm: 'arm-unknown-linux-musleabihf',
     armv7: 'armv7-unknown-linux-musleabihf',
     armv7l: 'armv7-unknown-linux-musleabihf',
-    ppc64le: 'powerpc64le-unknown-linux-musl'
+    ppc64le: 'powerpc64le-unknown-linux-musl',
+    loongarch64: 'loongarch64-unknown-linux-musl'
   },
   win32: {
     x64: 'x86_64-pc-windows-msvc',
